@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+
+# Sample population data (in millions)
+countries = ['India', 'China', 'United States', 'Indonesia', 'Pakistan', 'Brazil', 'Nigeria', 'Bangladesh', 'Russia', 'Mexico']
+populations = [1420, 1410, 340, 278, 240, 215, 220, 170, 144, 130]
+
+plt.figure(figsize=(12, 6))
+bars = plt.bar(countries, populations, color='steelblue')
+
+
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2.0, yval + 10, f'{yval}', ha='center', va='bottom')
+
+plt.title('Population Distribution by Country (2023)', fontsize=16)
+plt.xlabel('Country', fontsize=12)
+plt.ylabel('Population (in millions)', fontsize=12)
+plt.xticks(rotation=45)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+
